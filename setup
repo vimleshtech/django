@@ -1,0 +1,113 @@
+DJango Environment Setup
+=========================
+-Python 2.7 + Version 
+	3.6
+
+-VSCode  : Visual Studio Code 
+
+
+-Python DJango 
+	
+
+Step 1:
+	Setup the python environment variable 
+
+Step 2:
+	open VSCode
+
+Step 3: create project
+
+>python "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\Scripts
+
+\django-admin.py" startproject ecomm
+Step 4: 
+	Project's Structure 
+		
+
+
+	ecomm
+		ecomm
+			settings.py		**
+			init.py
+			urls.py			**
+			wsgi.py
+		manage.py
+		
+		
+
+Step 5: create app 
+	
+>cd ecomm
+>python "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\Scripts
+
+\django-admin.py" startapp login
+
+
+
+
+
+---
+$ python -m django --version
+
+create project
+$ django-admin startproject mysite
+
+$ python manage.py runserver
+
+$ python manage.py runserver 8080
+$ python manage.py runserver 0:8000
+$ python manage.py startapp polls
+
+
+Urls: setup
+============
+mysite/urls.py
+-------------------------
+
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path('polls/', include('polls.urls')),
+    path('admin/', admin.site.urls),
+]
+
+polls/urls.py
+---------------------------
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+]
+
+
+polls/views.py
+---------------------------------
+from django.http import HttpResponse
+
+
+def index(request):
+    return HttpResponse("Hello, world. You're at the polls index.")
+
+
+
+
+
+
+	
+ecomm(project)  -> urls.py 
+			-login(app)
+				urls.py	(create)
+					-page/view action /home
+					-page/view action /about
+					-page/view action /pages 
+
+					views.py
+
+		
+				
+	
+
+
